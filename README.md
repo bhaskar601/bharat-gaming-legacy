@@ -2,8 +2,6 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/71cebe42-5ec9-451e-b4bf-24d00717dca6
-
 ## Vercel deplyoment 
 https://bharat-gaming-legacy.vercel.app/
 
