@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Shuffle, Gamepad2, Trophy, Sparkles, Clock, Zap, Rocket } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Clock, Gamepad2, Rocket, Shuffle, Sparkles, Trophy, Zap } from "lucide-react";
+import { useState } from "react";
 import ancientGames from "./ancientGames";
-import modernGames from "./mordenGames";
 import futureGames from "./futureGames";
+import modernGames from "./mordenGames";
 const GameCard = ({ name, description, url, image, category }) => {
   return (
     <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 hover:scale-105 hover:-translate-y-2">
@@ -105,7 +105,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
-                    Timeless Game Gallery
+                       Indian Sport
                   </h1>
                   <p className="text-gray-300 text-lg mt-1 flex items-center">
                     <Sparkles className="h-4 w-4 mr-2 text-yellow-400" />
