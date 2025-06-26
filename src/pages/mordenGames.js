@@ -42,3 +42,4 @@ const modernGames = [
       category: "modern"
     }
   ];
+  export default modernGames;
