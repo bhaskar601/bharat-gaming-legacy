@@ -3,14 +3,14 @@ const modernGames = [
       name: "Ludo King",
       description: "Digital revival of the classic board game, connecting millions of Indian players online.",
       url: "https://www.youtube.com/watch?v=bREIbfDYFuw",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=300&fit=crop",
+      image: "https://youtu.be/wiGDUEqZ4lk?si=OE_900ooHUCYaSXY",
       category: "modern"
     },
     {
       name: "BGMI",
       description: "Battlegrounds Mobile India - the localized battle royale that captivated the nation.",
       url: "https://www.youtube.com/watch?v=Yu3e4_WkTDc",
-      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop",
+      image: "https://youtu.be/IAKZTufQZig?si=7WpBRpPF0JY4kn6W",
       category: "modern"
     },
     {
@@ -42,4 +42,3 @@ const modernGames = [
       category: "modern"
     }
   ];
-  export default modernGames;

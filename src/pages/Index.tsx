@@ -54,96 +54,10 @@ const Index = () => {
   const [currentTab, setCurrentTab] = useState("ancient");
 
   // Ancient games data
-  const ancientGames = [
-    {
-      name: "Pachisi",
-      description: "The ancient predecessor to modern Ludo, played on cross-shaped boards with cowrie shells as dice.",
-      url: "https://youtu.be/2_wjXquqlyQ?si=0rKC0hxs8tA7n1QO",
-      image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop",
-      category: "ancient"
-    },
-    {
-      name: "Chaupar",
-      description: "A traditional Indian board game similar to Pachisi, popular among Mughal royalty.",
-      url: "https://www.youtube.com/watch?v=5XxeN1r4oXs",
-      image: "https://youtu.be/eV1L_xMF_NM?si=W2H5-tsHTwut4JT1",
-      category: "ancient"
-    },
-    {
-      name: "Gilli Danda",
-      description: "Traditional Indian street game played with two wooden sticks, testing skill and precision.",
-      url: "https://www.youtube.com/watch?v=VQNYMwrM9Fg",
-      image: "https://youtu.be/ClaYLxs2YeY?si=BR9USZAvdn7Cw7MM",
-      category: "ancient"
-    },
-    {
-      name: "Kabaddi",
-      description: "Ancient contact sport combining wrestling and tag, requiring strength and strategy.",
-      url: "https://www.youtube.com/watch?v=t2FgkxgijgM",
-      image: "https://youtu.be/6gkEOPOehqk?si=9FgGnohVL37wA3AK",
-      category: "ancient"
-    },
-    {
-      name: "Chess (Chaturanga)",
-      description: "The ancient Indian origin of modern chess, representing the four divisions of the military.",
-      url: "https://www.youtube.com/watch?v=vqXLGX0szIQ",
-      image: "https://youtu.be/s2u5mv2RRG4?si=iBTwa7zFnVda7Fmt",
-      category: "ancient"
-    },
-    {
-      name: "Kho-Kho",
-      description: "Traditional Indian tag sport played between two teams, emphasizing speed and agility.",
-      url: "https://youtu.be/b601XCUfZ_4?si=hUFQWE0BCPzcG4-F",
-      image: "",
-      category: "ancient"
-    }
-  ];
+  
 
   // Modern games data
-  const modernGames = [
-    {
-      name: "Ludo King",
-      description: "Digital revival of the classic board game, connecting millions of Indian players online.",
-      url: "https://www.youtube.com/watch?v=bREIbfDYFuw",
-      image: "https://youtu.be/wiGDUEqZ4lk?si=OE_900ooHUCYaSXY",
-      category: "modern"
-    },
-    {
-      name: "BGMI",
-      description: "Battlegrounds Mobile India - the localized battle royale that captivated the nation.",
-      url: "https://www.youtube.com/watch?v=Yu3e4_WkTDc",
-      image: "https://youtu.be/IAKZTufQZig?si=7WpBRpPF0JY4kn6W",
-      category: "modern"
-    },
-    {
-      name: "Dream11 Fantasy Cricket",
-      description: "Fantasy sports platform that revolutionized how Indians engage with cricket.",
-      url: "https://www.youtube.com/watch?v=cdfwbAaYPbE",
-      image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=300&fit=crop",
-      category: "modern"
-    },
-    {
-      name: "Chess.com India",
-      description: "Rise of Indian grandmasters in the digital chess revolution, dominating global tournaments.",
-      url: "https://www.youtube.com/watch?v=PEdQ3F3O0oI",
-      image: "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=400&h=300&fit=crop",
-      category: "modern"
-    },
-    {
-      name: "RummyCircle & Teen Patti",
-      description: "Digital versions of traditional Indian card games, preserving cultural gaming practices.",
-      url: "https://www.youtube.com/watch?v=RJZ3nG-6HoU",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
-      category: "modern"
-    },
-    {
-      name: "Gaming Café Culture",
-      description: "Local arcade games and digital café culture that brought gaming to the masses.",
-      url: "https://www.youtube.com/watch?v=IAdT3Uw1OHo",
-      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop",
-      category: "modern"
-    }
-  ];
+  
 
   // Future games data
   
