@@ -49,3 +49,4 @@ const ancientGames = [
     category: "ancient",
   },
 ];
+export default ancientGames;

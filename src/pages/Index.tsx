@@ -52,16 +52,6 @@ const GameCard = ({ name, description, url, image, category }) => {
 
 const Index = () => {
   const [currentTab, setCurrentTab] = useState("ancient");
-
-  // Ancient games data
-  
-
-  // Modern games data
-  
-
-  // Future games data
-  
-
   const allGames = [...ancientGames, ...modernGames, ...futureGames];
 
   const getRandomGame = () => {
