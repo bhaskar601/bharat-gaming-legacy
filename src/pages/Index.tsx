@@ -40,7 +40,7 @@ const GameCard = ({ name, description, url, image, category }) => {
           className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50 group-hover:scale-105"
         >
           <Gamepad2 className="mr-2 h-4 w-4" />
-          Play Now
+           Watch
         </Button>
       </div>
       
