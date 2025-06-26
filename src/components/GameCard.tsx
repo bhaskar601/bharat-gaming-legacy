@@ -1,60 +1,43 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Play } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 interface GameCardProps {
   name: string;
   description: string;
   url: string;
-  category?: string;
+  image: string;
 }
 
-const GameCard = ({ name, description, url, category }: GameCardProps) => {
+const GameCard = ({ name, description, url, image }: GameCardProps) => {
   const handleClick = () => {
     window.open(url, '_blank');
   };
 
-  const getCategoryColors = () => {
-    switch (category) {
-      case 'ancient':
-        return 'from-amber-500 to-orange-600';
-      case 'modern':
-        return 'from-blue-500 to-purple-600';
-      case 'future':
-        return 'from-purple-500 to-pink-600';
-      default:
-        return 'from-gray-500 to-gray-600';
-    }
-  };
-
   return (
     <Card 
-      className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-white/80 backdrop-blur-sm border-2 border-amber-100 hover:border-amber-300 overflow-hidden"
+      className="group cursor-pointer transition-all duration-300 hover:shadow-lg bg-white border border-gray-200 hover:border-gray-300 overflow-hidden"
       onClick={handleClick}
     >
-      <CardContent className="p-6 relative">
-        {/* Play button overlay */}
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className={`bg-gradient-to-r ${getCategoryColors()} p-2 rounded-full shadow-lg`}>
-            <Play className="w-4 h-4 text-white" fill="white" />
-          </div>
+      <div className="aspect-video w-full overflow-hidden">
+        <img 
+          src={image} 
+          alt={name}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      
+      <CardContent className="p-4">
+        <div className="flex items-start justify-between mb-2">
+          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-1">
+            {name}
+          </h3>
+          <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors flex-shrink-0 ml-2" />
         </div>
-
-        {/* Game thumbnail placeholder */}
-        <div className={`w-full h-32 bg-gradient-to-br ${getCategoryColors()} rounded-lg mb-4 flex items-center justify-center shadow-md`}>
-          <Play className="w-8 h-8 text-white opacity-70" />
-        </div>
-
-        {/* Game info */}
-        <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-orange-700 transition-colors">
-          {name}
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
+        
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
           {description}
         </p>
-
-        {/* Hover effect border */}
-        <div className={`absolute inset-0 bg-gradient-to-r ${getCategoryColors()} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg`}></div>
       </CardContent>
     </Card>
   );

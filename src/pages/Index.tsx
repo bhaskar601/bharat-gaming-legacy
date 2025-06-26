@@ -2,114 +2,240 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Shuffle, Play } from "lucide-react";
-import AncientIndia from "@/components/AncientIndia";
-import ModernIndia from "@/components/ModernIndia";
-import FutureIndia from "@/components/FutureIndia";
+import { Shuffle } from "lucide-react";
 import GameCard from "@/components/GameCard";
 
 const Index = () => {
   const [currentTab, setCurrentTab] = useState("ancient");
 
-  // All games data for random selection
-  const allGames = [
-    // Ancient games
-    { name: "Pachisi", description: "Ancient predecessor to modern Ludo", url: "https://www.youtube.com/watch?v=qI-LHcCyMZQ", category: "ancient" },
-    { name: "Chaupar", description: "Traditional Indian board game", url: "https://www.youtube.com/watch?v=5XxeN1r4oXs", category: "ancient" },
-    { name: "Gilli Danda", description: "Traditional Indian street game", url: "https://www.youtube.com/watch?v=VQNYMwrM9Fg", category: "ancient" },
-    { name: "Kabaddi", description: "Ancient contact sport", url: "https://www.youtube.com/watch?v=t2FgkxgijgM", category: "ancient" },
-    { name: "Chess (Chaturanga)", description: "Origin of modern chess", url: "https://www.youtube.com/watch?v=vqXLGX0szIQ", category: "ancient" },
-    // Modern games
-    { name: "Ludo King", description: "Digital revival of classic board game", url: "https://www.youtube.com/watch?v=bREIbfDYFuw", category: "modern" },
-    { name: "BGMI", description: "Battlegrounds Mobile India", url: "https://www.youtube.com/watch?v=Yu3e4_WkTDc", category: "modern" },
-    { name: "Dream11", description: "Fantasy cricket platform", url: "https://www.youtube.com/watch?v=cdfwbAaYPbE", category: "modern" },
-    // Future games
-    { name: "Raji", description: "Made-in-India action adventure", url: "https://www.youtube.com/watch?v=HpG4zSLop1E", category: "future" },
-    { name: "Indian Esports", description: "Growing competitive gaming scene", url: "https://www.youtube.com/watch?v=E0FKso0c2Ao", category: "future" },
+  // Ancient games data
+  const ancientGames = [
+    {
+      name: "Pachisi",
+      description: "The ancient predecessor to modern Ludo, played on cross-shaped boards with cowrie shells as dice.",
+      url: "https://www.youtube.com/watch?v=qI-LHcCyMZQ",
+      image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Chaupar",
+      description: "A traditional Indian board game similar to Pachisi, popular among Mughal royalty.",
+      url: "https://www.youtube.com/watch?v=5XxeN1r4oXs",
+      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Gilli Danda",
+      description: "Traditional Indian street game played with two wooden sticks, testing skill and precision.",
+      url: "https://www.youtube.com/watch?v=VQNYMwrM9Fg",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Kabaddi",
+      description: "Ancient contact sport combining wrestling and tag, requiring strength and strategy.",
+      url: "https://www.youtube.com/watch?v=t2FgkxgijgM",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Chess (Chaturanga)",
+      description: "The ancient Indian origin of modern chess, representing the four divisions of the military.",
+      url: "https://www.youtube.com/watch?v=vqXLGX0szIQ",
+      image: "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Kho-Kho",
+      description: "Traditional Indian tag sport played between two teams, emphasizing speed and agility.",
+      url: "https://www.youtube.com/watch?v=R9oEp7Z2Tko",
+      image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop"
+    }
   ];
+
+  // Modern games data
+  const modernGames = [
+    {
+      name: "Ludo King",
+      description: "Digital revival of the classic board game, connecting millions of Indian players online.",
+      url: "https://www.youtube.com/watch?v=bREIbfDYFuw",
+      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=300&fit=crop"
+    },
+    {
+      name: "BGMI",
+      description: "Battlegrounds Mobile India - the localized battle royale that captivated the nation.",
+      url: "https://www.youtube.com/watch?v=Yu3e4_WkTDc",
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Dream11 Fantasy Cricket",
+      description: "Fantasy sports platform that revolutionized how Indians engage with cricket.",
+      url: "https://www.youtube.com/watch?v=cdfwbAaYPbE",
+      image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Chess.com India",
+      description: "Rise of Indian grandmasters in the digital chess revolution, dominating global tournaments.",
+      url: "https://www.youtube.com/watch?v=PEdQ3F3O0oI",
+      image: "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=400&h=300&fit=crop"
+    },
+    {
+      name: "RummyCircle & Teen Patti",
+      description: "Digital versions of traditional Indian card games, preserving cultural gaming practices.",
+      url: "https://www.youtube.com/watch?v=RJZ3nG-6HoU",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Gaming Café Culture",
+      description: "Local arcade games and digital café culture that brought gaming to the masses.",
+      url: "https://www.youtube.com/watch?v=IAdT3Uw1OHo",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop"
+    }
+  ];
+
+  // Future games data
+  const futureGames = [
+    {
+      name: "Raji: An Ancient Epic",
+      description: "Made-in-India action-adventure game showcasing Indian mythology and artistry.",
+      url: "https://www.youtube.com/watch?v=HpG4zSLop1E",
+      image: "https://images.unsplash.com/photo-1580327344181-c1163234e5a0?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Indian Esports Scene",
+      description: "Professional competitive gaming with organizations like Skyesports and Nodwin Gaming.",
+      url: "https://www.youtube.com/watch?v=E0FKso0c2Ao",
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop"
+    },
+    {
+      name: "AR/VR Traditional Games",
+      description: "Augmented and virtual reality simulations bringing ancient games to life.",
+      url: "https://www.youtube.com/watch?v=5VkYH9kfsRs",
+      image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Metaverse Gaming",
+      description: "Virtual worlds and metaverse experiences tailored for Indian audiences and culture.",
+      url: "https://www.youtube.com/watch?v=gAzZ_Ag9kZw",
+      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Regional Language Gaming",
+      description: "Educational and entertainment games developed in local Indian languages.",
+      url: "https://www.youtube.com/watch?v=pVo3xChO7yM",
+      image: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=400&h=300&fit=crop"
+    },
+    {
+      name: "Indus Battle Royale",
+      description: "India's own battle royale game featuring culturally relevant themes and characters.",
+      url: "https://www.youtube.com/watch?v=rPK9FuGzX4I",
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop"
+    }
+  ];
+
+  const allGames = [...ancientGames, ...modernGames, ...futureGames];
 
   const getRandomGame = () => {
     const randomGame = allGames[Math.floor(Math.random() * allGames.length)];
     window.open(randomGame.url, '_blank');
   };
 
+  const getCurrentGames = () => {
+    switch (currentTab) {
+      case "ancient":
+        return ancientGames;
+      case "modern":
+        return modernGames;
+      case "future":
+        return futureGames;
+      default:
+        return ancientGames;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
-      {/* Header Section */}
-      <div className="relative bg-gradient-to-r from-amber-900 via-orange-800 to-red-900 text-white py-16 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent">
-            भारत Play
-          </h1>
-          <p className="text-xl md:text-2xl mb-4 text-amber-100">
-            A Timeless Gaming Journey
-          </p>
-          <div className="text-lg md:text-xl italic text-amber-200 mb-8">
-            "क्रीडायाम् अपि संस्कृति अस्ति।"
-            <br />
-            <span className="text-sm text-amber-300">Even in play, there is culture.</span>
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Timeless Game Gallery</h1>
+              <p className="text-gray-600 mt-1">Discover India's rich gaming heritage</p>
+            </div>
+            <Button 
+              onClick={getRandomGame}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium"
+            >
+              <Shuffle className="mr-2 h-4 w-4" />
+              Random Game
+            </Button>
           </div>
-          <Button 
-            onClick={getRandomGame}
-            className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 shadow-lg"
-          >
-            <Shuffle className="mr-2" size={20} />
-            Play & Learn
-          </Button>
         </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute top-10 left-10 w-20 h-20 border-2 border-yellow-400/30 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-16 h-16 border-2 border-orange-400/30 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-20 w-12 h-12 border-2 border-red-400/30 rounded-full animate-pulse delay-500"></div>
-      </div>
+      </header>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <Tabs value={currentTab} onValueChange={setCurrentTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 bg-white/70 backdrop-blur-sm border-2 border-amber-200 rounded-xl p-2 mb-12 shadow-lg">
+          <TabsList className="grid w-full grid-cols-3 bg-white rounded-lg shadow-sm p-1 mb-8">
             <TabsTrigger 
               value="ancient" 
-              className="text-lg font-semibold py-4 px-6 rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-orange-500 data-[state=active]:text-white transition-all duration-300"
+              className="text-sm font-medium py-3 px-6 rounded-md data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700 data-[state=active]:shadow-sm"
             >
-              🏺 Ancient India
+              Ancient Games
             </TabsTrigger>
             <TabsTrigger 
               value="modern" 
-              className="text-lg font-semibold py-4 px-6 rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white transition-all duration-300"
+              className="text-sm font-medium py-3 px-6 rounded-md data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700 data-[state=active]:shadow-sm"
             >
-              🎮 India Now
+              Modern Gaming
             </TabsTrigger>
             <TabsTrigger 
               value="future" 
-              className="text-lg font-semibold py-4 px-6 rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white transition-all duration-300"
+              className="text-sm font-medium py-3 px-6 rounded-md data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700 data-[state=active]:shadow-sm"
             >
-              🚀 Future Gaming
+              Future Gaming
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="ancient" className="animate-fade-in">
-            <AncientIndia />
+          <TabsContent value="ancient" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {ancientGames.map((game, index) => (
+                <GameCard
+                  key={index}
+                  name={game.name}
+                  description={game.description}
+                  url={game.url}
+                  image={game.image}
+                />
+              ))}
+            </div>
           </TabsContent>
 
-          <TabsContent value="modern" className="animate-fade-in">
-            <ModernIndia />
+          <TabsContent value="modern" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {modernGames.map((game, index) => (
+                <GameCard
+                  key={index}
+                  name={game.name}
+                  description={game.description}
+                  url={game.url}
+                  image={game.image}
+                />
+              ))}
+            </div>
           </TabsContent>
 
-          <TabsContent value="future" className="animate-fade-in">
-            <FutureIndia />
+          <TabsContent value="future" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {futureGames.map((game, index) => (
+                <GameCard
+                  key={index}
+                  name={game.name}
+                  description={game.description}
+                  url={game.url}
+                  image={game.image}
+                />
+              ))}
+            </div>
           </TabsContent>
         </Tabs>
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-amber-900 via-orange-800 to-red-900 text-white py-8 mt-16">
-        <div className="max-w-6xl mx-auto text-center px-4">
-          <p className="text-lg mb-2">Celebrating India's Rich Gaming Heritage</p>
-          <p className="text-amber-200">From Ancient Traditions to Digital Innovations</p>
-        </div>
-      </footer>
+      </main>
     </div>
   );
 };
