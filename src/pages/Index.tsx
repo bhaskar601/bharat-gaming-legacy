@@ -56,7 +56,7 @@ const Index = () => {
 
   const getRandomGame = () => {
     const randomGame = allGames[Math.floor(Math.random() * allGames.length)];
-    window.open(randomGame.url, '_blank');
+    window.open('https://www.crazygames.com/c/adventure');
   };
 
   const getCurrentGames = () => {
