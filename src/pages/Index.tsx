@@ -50,7 +50,7 @@ const GameCard = ({ name, description, url, image, category }) => {
           className="w-full bg-gradient-to-r from-[#FF6F00] to-[#2E7D32] hover:from-[#E65100] hover:to-[#1B5E20] text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/50 group-hover:scale-105"
         >
           <Gamepad2 className="mr-2 h-4 w-4" />
-          Play Now
+           Watch
         </Button>
       </div>
 
@@ -67,7 +67,7 @@ const Index = () => {
 
   const getRandomGame = () => {
     const randomGame = allGames[Math.floor(Math.random() * allGames.length)];
-    window.open(randomGame.url, '_blank');
+    window.open('https://www.crazygames.com/c/adventure');
   };
 
   const getCurrentGames = () => {
