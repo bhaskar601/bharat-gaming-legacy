@@ -10,7 +10,7 @@ const GameCard = ({ name, description, url, image, category }) => {
     <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 hover:scale-105 hover:-translate-y-2">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div className="relative h-48 overflow-hidden">
-        <img 
+        <img  
           src={image} 
           alt={name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
