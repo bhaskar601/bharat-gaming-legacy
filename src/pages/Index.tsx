@@ -14,8 +14,7 @@ const GameCard = ({ name, description, url, image, category }) => {
       <div className="relative h-48 overflow-hidden">
         <img  
           src={image} 
-        <img
-          src={image}
+     
           alt={name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
@@ -137,9 +136,12 @@ const Index = () => {
                       <Trophy className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <h1 className="text-4xl font-bold bg-gradient-to-r from-[#FF6F00] via-[#000000] to-[#2E7D32] bg-clip-text text-transparent">
-                        Indian Games Legacy
-                      </h1>
+                    <h1
+  className="text-5xl font-extrabold tracking-widest text-center bg-gradient-to-r from-[#FF6F00] via-[#000000] to-[#2E7D32] bg-clip-text text-transparent animate-gradient-x drop-shadow-lg"
+>
+  ✦ INDIAN GAMES ERA ✦
+</h1>
+
                       <p className="text-[#4E342E] text-lg mt-1 flex items-center">
                         <Sparkles className="h-4 w-4 mr-2 text-[#FFAB00]" />
                         Discover India's rich gaming heritage
@@ -260,7 +262,6 @@ const Index = () => {
       </div>
     </>
   );
-  
 };
 
 export default Index;
