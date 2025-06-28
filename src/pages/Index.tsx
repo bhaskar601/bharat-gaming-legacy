@@ -103,9 +103,10 @@ const Index = () => {
       <div className="bg-gradient-to-br from-[#FF9933] via-[#ffffff] to-[#138808]">
         <div className="h-[50vh] w-full  flex items-center justify-center text-center px-4 relative z-20">
           <div className="bg-white/80 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-2xl border-4 border-[#800000] max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-[#800000] mb-4">
-              🇮🇳 Bharat Gaming 🇮🇳
-            </h1>
+           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-[#ff512f] via-[#dd2476] to-[#800000] text-transparent bg-clip-text drop-shadow-md tracking-wider mb-6 text-center">
+  Indian Games Era
+</h1>
+
             <p className="text-xl md:text-2xl text-[#1A237E] font-medium">
               A timeless celebration of India's gaming heritage!
             </p>
