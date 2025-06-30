@@ -1,20 +1,30 @@
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Clock, Gamepad2, Rocket, Shuffle, Sparkles, Trophy, Zap } from "lucide-react";
-import { useState } from "react";
+import { Clock, Rocket, Shuffle, Sparkles, Trophy, Zap } from "lucide-react";
+// import { useState } from "react";
 import ancientGames from "./ancientGames";
 import futureGames from "./futureGames";
 import modernGames from "./mordenGames";
-import Header from "./Header";
+
+
+import { Button } from "@/components/ui/button";
+import { Gamepad2 } from "lucide-react";
+import { useState } from "react";
+
 const GameCard = ({ name, description, url, image, category }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
   return (
     <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-100/20 to-orange-100/10 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-orange-500/25 transition-all duration-500 hover:scale-105 hover:-translate-y-2">
       <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       <div className="relative h-48 overflow-hidden">
-        <img  
-          src={image} 
-     
+        <img
+          src={image}
           alt={name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
@@ -41,9 +51,18 @@ const GameCard = ({ name, description, url, image, category }) => {
         <h3 className="text-xl font-bold text-[#4E342E] mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#FF6F00] group-hover:to-[#2E7D32] group-hover:bg-clip-text transition-all duration-300">
           {name}
         </h3>
-        <p className="text-[#4E342E] text-sm leading-relaxed mb-4 line-clamp-3">
+
+        <p className={`text-[#4E342E] text-sm leading-relaxed mb-2 ${
+          !isExpanded ? "line-clamp-3" : ""
+        }`}>
           {description}
         </p>
+        <button
+          onClick={handleToggle}
+          className="text-sm text-orange-700 font-semibold underline focus:outline-none mb-4"
+        >
+          {isExpanded ? "Show less" : "More..."}
+        </button>
 
         {/* Play button */}
         <Button
@@ -51,7 +70,7 @@ const GameCard = ({ name, description, url, image, category }) => {
           className="w-full bg-gradient-to-r from-[#FF6F00] to-[#2E7D32] hover:from-[#E65100] hover:to-[#1B5E20] text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/50 group-hover:scale-105"
         >
           <Gamepad2 className="mr-2 h-4 w-4" />
-           Watch
+          Watch
         </Button>
       </div>
 
@@ -60,6 +79,9 @@ const GameCard = ({ name, description, url, image, category }) => {
     </div>
   );
 };
+
+// export default GameCard;
+
 
 
 const Index = () => {
@@ -104,7 +126,7 @@ const Index = () => {
         <div className="h-[50vh] w-full  flex items-center justify-center text-center px-4 relative z-20">
           <div className="bg-white/80 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-2xl border-4 border-[#800000] max-w-3xl">
            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-[#ff512f] via-[#dd2476] to-[#800000] text-transparent bg-clip-text drop-shadow-md tracking-wider mb-6 text-center">
-  Indian Games Era
+  INDIAN GAMES ERA
 </h1>
 
             <p className="text-xl md:text-2xl text-[#1A237E] font-medium">
